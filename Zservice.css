@@ -1,4 +1,18 @@
 /* styles.css */
+ /* --- Header & Navigation --- */
+        #main-header {
+            background-color: rgba(26, 26, 26, 0.85); /* Semi-transparent dark */
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+            backdrop-filter: blur(5px); /* Frosted glass effect */
+            
+        }
 
 
         #main-header .container {
@@ -96,8 +110,9 @@
         }
 
 
-body.se {
+body {
   background: #f8f9fa;
+  margin-top: 3cm;
 }
 .card-worker {
   border-radius: 8px;
