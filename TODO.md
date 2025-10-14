@@ -1,0 +1,2 @@
+- [ ] Add responsive styles to Zservice.css for mobile navbar
+- [ ] Add toggle functionality to script.js for menu button

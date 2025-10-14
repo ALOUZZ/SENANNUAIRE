@@ -715,6 +715,15 @@ function applyFilters() {
 }
 
 window.addEventListener("DOMContentLoaded", () => {
+  // Navbar toggle for mobile
+  const menuToggle = document.getElementById("menu-toggle");
+  const navbar = document.getElementById("navbar");
+  if (menuToggle && navbar) {
+    menuToggle.addEventListener("click", () => {
+      navbar.classList.toggle("active");
+    });
+  }
+
   document.querySelectorAll(".domain-btn").forEach(btn => {
     btn.addEventListener("click", (ev) => {
       document.querySelectorAll(".domain-btn").forEach(b => b.classList.remove("btn-primary"));

@@ -51,6 +51,50 @@
             cursor: pointer;
         }
 
+        /* Responsive Navbar */
+        @media (max-width: 767px) {
+            #main-header .container {
+                position: relative;
+            }
+
+            #navbar {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, 0.9);
+                display: none;
+                flex-direction: column;
+                padding: 10px 0;
+                z-index: 1000;
+            }
+
+            #navbar.active {
+                display: flex;
+            }
+
+            #navbar ul {
+                flex-direction: column;
+                margin: 0;
+                padding: 0;
+            }
+
+            #navbar ul li {
+                margin: 0;
+                text-align: center;
+            }
+
+            #navbar ul li a {
+                display: block;
+                padding: 10px 20px;
+                border-bottom: none;
+            }
+
+            #menu-toggle {
+                display: block;
+            }
+        }
+
 
 body.se {
   background: #f8f9fa;
