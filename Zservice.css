@@ -1,0 +1,79 @@
+/* styles.css */
+
+
+        #main-header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #logo {
+            font-family: var(--font-secondary);
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-light);
+        }
+        #logo span { /* Neon accent on part of the logo */
+            color: var(--neon-pink);
+        }
+
+
+        #navbar ul {
+            list-style: none;
+            display: flex;
+        }
+
+        #navbar ul li {
+            margin-left: 25px;
+        }
+
+        #navbar ul li a {
+            color: var(--text-light);
+            font-weight: bold;
+            padding-bottom: 5px;
+            border-bottom: 2px solid transparent;
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+
+        #navbar ul li a:hover,
+        #navbar ul li a.active {
+            color: var(--neon-pink);
+            border-bottom-color: var(--neon-pink);
+        }
+
+        /* Mobile Nav Toggle - basic styling */
+        #menu-toggle {
+            display: none; /* Hidden by default */
+            background: none;
+            border: none;
+            color: var(--text-light);
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+
+body.se {
+  background: #f8f9fa;
+}
+.card-worker {
+  border-radius: 8px;
+  box-shadow: 0 0 0 1px rgba(0,0,0,0.06);
+  background-color: pink;
+}
+.tag {
+  font-size: 0.78rem;
+  padding: 4px 8px;
+  border-radius: 12px;
+  display: inline-block;
+  margin-right: 6px;
+}
+.btn-call {
+  min-width: 85px;
+}
+.filtre{
+  background-color: skyblue;
+  color: black;
+}
+.btn{
+  color: black;
+}
