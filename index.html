@@ -1,21 +1,29 @@
+<!-- index.html : Page principale de l'annuaire SEN ANNUAIRE, contenant l'en-tête, les sections d'accueil, à propos, services, portfolio, contact, et le pied de page. -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+    <!-- Définition de l'encodage et de la langue pour la page -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SEN ANNUAIRE  </title>
+    <!-- Lien vers la feuille de style principale -->
     <link rel="stylesheet" href="style.css">
+    <!-- Préconnexion aux polices Google pour améliorer les performances -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    
+
 </head>
 <body>
-
+    <!-- En-tête fixe avec logo et navigation -->
     <header id="main-header">
         <div class="container">
-            <div id="logo">SEN<span>ANNUAIRE</span></div>
-            <button id="menu-toggle">&#9776;</button> <nav id="navbar">
+            <!-- Logo de l'application -->
+             <a href="#home"><div id="logo">SEN<span>ANNUAIRE</span></div></a>
+            <!-- Bouton pour basculer le menu mobile -->
+            <button id="menu-toggle">&#9776;</button>
+            <!-- Navigation principale -->
+            <nav id="navbar">
                 <ul>
                     <li><a href="#home" class="nav-link active">ACCUEIL</li>
                     <li><a href="service.html" class="nav-link">SERVICES</a></li>
@@ -26,6 +34,7 @@
         </div>
     </header>
 
+    <!-- Section d'accueil avec titre et bouton de contact -->
     <section id="home">
         <div class="container">
             <h1>En un click votre <span>ANNUAIRE</span></h1>
@@ -34,6 +43,7 @@
         </div>
     </section>
 
+    <!-- Section à propos avec image et texte explicatif -->
     <section id="about">
         <div class="container">
              <div class="about-image">
@@ -48,6 +58,7 @@
         </div>
     </section>
 
+    <!-- Section services avec devise et grille de services -->
     <section id="services">
         <div class="container">
             <h2 style="color: black;">DEVISE</h2>
@@ -64,64 +75,67 @@
                     <h3>QUAILITE</h3>
                     <p>Des services d’excellence pour répondre à vos attentes.</p>
                 </div>
-    
+
             </div>
         </div>
     </section>
 
+    <!-- Section portfolio avec grille d'images de services -->
     <section id="portfolio">
         <div class="container">
             <h2>NOS SERVICES</h2>
             <div class="portfolio-grid">
-                <div class="portfolio-item" data-src="images/MEDECIN.jpg" >
+                <div class="portfolio-item" >
                     <h3 class="ttr">MEDECIN</h3>
-                    <img src="images/MEDECIN.jpg" alt="MEDECIN">
-                    <div class="overlay">View</div>
+                    <a href="service.html"> <img src="images/MEDECIN.jpg" alt="MEDECIN" ></a>
+                    
                 </div>
-                <div class="portfolio-item" data-src="images/gallery-2.jpg">
+                <div class="portfolio-item" >
                     <h3 class="ttr">INFORMATICIEN</h3>
-                    <img src="images/INFORMATICIEN.jpg" alt="Editorial Makeup Look 2">
-                    <div class="overlay">View</div>
+                    <a href="service.html"> <img src="images/INFORMATICIEN.jpg" alt="MEDECIN" ></a>
+                    
                 </div>
-                 <div class="portfolio-item" data-src="images/gallery-3.jpg">
+                 <div class="portfolio-item" >
                     <h3 class="ttr">INSTITUTEUR</h3>
-                    <img src="images/INSTITUTEUR.jpg" alt="Neon Makeup Look 3">
-                    <div class="overlay"></div>
+                    <a href="service.html"> <img src="images/INSTITUTEUR.jpg" alt="MEDECIN" ></a>
+                    
                 </div>
-                <div class="portfolio-item" data-src="images/gallery-4.jpg">
+                <div class="portfolio-item" >
                     <h3 class="ttr">SECURITE</h3>
-                    <img src="images/SECURITE.jpg" alt="Fashion Makeup Look 4">
-                    <div class="overlay">View</div>
+                    <a href="service.html"> <img src="images/SECURITE.jpg" alt="MEDECIN" ></a>
+                    
                 </div>
-                 <div class="portfolio-item" data-src="images/Maconnerie.webp" >
+                 <div class="portfolio-item"  >
                     <h3 class="ttr">MACONNERIE</h3>
-                    <img src="images/Maconnerie.webp" alt="Avant Garde Makeup Look 5">
-                    <div class="overlay">View</div>
+                    <a href="service.html"> <img src="images/Maconnerie.webp" alt="MEDECIN" ></a>
+                    
                 </div>
-                <div class="portfolio-item" data-src="images/gallery-6.jpg">
+                <div class="portfolio-item" >
                     <h3 class="ttr">PLOMBERIE</h3>
-                    <img src="images/plomberie-2.jpg" alt="Bridal Makeup Look 6">
-                    <div class="overlay">View</div>
+                    <a href="service.html"> <img src="images/plomberie-2.jpg" alt="MEDECIN" ></a>
+                    
                 </div>
-                 <div class="portfolio-item" data-src="images/ELECT.webp">
+                 <div class="portfolio-item" >
                     <h3 class="ttr">ELECTRICITE</h3>
-                    <img src="images/ELECT.webp" alt="Creative Makeup Look 7">
-                    <div class="overlay">View</div>
+                    <a href="service.html"> <img src="images/ELECT.webp" alt="MEDECIN" ></a>
+                    
                 </div>
-                <div class="portfolio-item" data-src="images/PEINTURE.jpg">
+                <div class="portfolio-item" >
                     <h3 class="ttr">PEINTURE</h3>
-                    <img src="images/PEINTURE.jpg" alt="Glamour Makeup Look 8">
-                    <div class="overlay">View</div>
+                    <a href="service.html"> <img src="images/PEINTURE.jpg" alt="MEDECIN" ></a>
+                    
                 </div>
                 </div>
         </div>
     </section>
 
+     <!-- Lightbox pour afficher les images en grand -->
      <div id="lightbox">
         <span id="lightbox-close">&times;</span>
         <img id="lightbox-img" src="" alt="Portfolio Image Large View">
     </div>
 
+    <!-- Section contact avec formulaire et informations -->
     <section id="contact">
         <div class="container">
             <h2 style="color: black;">CONTACT</h2>
@@ -143,12 +157,13 @@
             </form>
             <div class="contact-info">
                 <p style="color: black;"><strong>Email:</strong> contact.example.com</p>
-                <p style="color: black;"> <strong>Phone:</strong> +1 (000) 0000000000000</p>
-                <p style="color: black;" ><strong>Studio Location:</strong> 123 City, GRAND YOFF</p>
+                <p style="color: black;"> <strong>TELEPHONE:</strong> 0000000000000</p>
+                <p style="color: black;" ><strong>LOCALISATION:</strong> 123 City, GRAND YOFF</p>
             </div>
         </div>
     </section>
 
+    <!-- Pied de page avec droits réservés -->
     <footer id="main-footer">
         <p>&copy; 2025 SENANNUAIRE . All Rights Reserved. | Design by AI </p>
          <p>by AOS </p>
@@ -156,10 +171,11 @@
 
 
 
+    <!-- Script JavaScript pour les interactions de la page -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
 
-            // --- Mobile Navigation Toggle ---
+            // --- Basculement du menu mobile ---
             const menuToggle = document.getElementById('menu-toggle');
             const navbar = document.getElementById('navbar');
 
@@ -167,7 +183,7 @@
                  menuToggle.addEventListener('click', () => {
                     navbar.classList.toggle('active');
                  });
-                 // Close menu when a link is clicked (optional)
+                 // Fermer le menu lorsqu'un lien est cliqué (optionnel)
                  navbar.querySelectorAll('a').forEach(link => {
                      link.addEventListener('click', () => {
                          if (navbar.classList.contains('active')) {
@@ -177,14 +193,14 @@
                  });
             }
 
-            // --- Active Nav Link Highlighting on Scroll ---
-            const sections = document.querySelectorAll('section'); // Select all sections
+            // --- Mise en évidence des liens de navigation actifs lors du défilement ---
+            const sections = document.querySelectorAll('section'); // Sélectionner toutes les sections
             const navLinks = document.querySelectorAll('#navbar a.nav-link');
 
             const options = {
                 root: null, // viewport
-                threshold: 0.5, // 50% of section visible
-                rootMargin: "-80px 0px 0px 0px" // Adjust for fixed header height
+                threshold: 0.5, // 50% de la section visible
+                rootMargin: "-80px 0px 0px 0px" // Ajuster pour la hauteur de l'en-tête fixe
             };
 
             const observer = new IntersectionObserver((entries, observer) => {
@@ -192,7 +208,7 @@
                     if (entry.isIntersecting) {
                         navLinks.forEach(link => {
                             link.classList.remove('active');
-                            // Check if the link's href matches the intersecting section's id
+                            // Vérifier si le href du lien correspond à l'id de la section intersectée
                             if (link.getAttribute('href') === `#${entry.target.id}`) {
                                 link.classList.add('active');
                             }
@@ -201,15 +217,15 @@
                 });
             }, options);
 
-            // Observe all section elements found
+            // Observer toutes les sections trouvées
             sections.forEach(section => {
-                if(section.id) { // Only observe sections that have an ID (relevant for nav)
+                if(section.id) { // Observer seulement les sections qui ont un ID (pertinent pour la nav)
                      observer.observe(section);
                 }
             });
 
 
-            // --- Portfolio Lightbox ---
+            // --- Lightbox du portfolio ---
             const portfolioItems = document.querySelectorAll('.portfolio-item');
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
@@ -226,15 +242,15 @@
                     });
                 });
 
-                // Close lightbox
+                // Fermer la lightbox
                 lightboxClose.addEventListener('click', () => {
                     lightbox.classList.remove('active');
-                    lightboxImg.setAttribute('src', ''); // Clear src
+                    lightboxImg.setAttribute('src', ''); // Effacer la source
                 });
 
-                // Close on clicking background (optional)
+                // Fermer en cliquant sur l'arrière-plan (optionnel)
                 lightbox.addEventListener('click', (e) => {
-                    if (e.target === lightbox) { // Check if the click is on the background itself
+                    if (e.target === lightbox) { // Vérifier si le clic est sur l'arrière-plan lui-même
                          lightbox.classList.remove('active');
                          lightboxImg.setAttribute('src', '');
                     }
@@ -242,30 +258,10 @@
             }
 
 
-            // --- Simulated Chat Widget Toggle ---
-            const chatWidget = document.getElementById('chat-widget');
-            const chatPopup = document.getElementById('chat-popup');
-            const chatClose = document.getElementById('chat-close');
+            
 
-            if (chatWidget && chatPopup && chatClose) {
-                chatWidget.addEventListener('click', () => {
-                    chatPopup.classList.toggle('active');
-                });
 
-                chatClose.addEventListener('click', () => {
-                    chatPopup.classList.remove('active');
-                });
-            }
 
-             // --- Disable Form Submission (Demo Only) ---
-            const contactForm = document.getElementById('contact-form');
-            if(contactForm) {
-                contactForm.addEventListener('submit', (e) => {
-                    e.preventDefault(); // Prevent actual submission
-                    alert('Thank you for your message! (Form submission is disabled in this demo)');
-                    contactForm.reset(); // Clear the form
-                });
-            }
 
         });
     </script>

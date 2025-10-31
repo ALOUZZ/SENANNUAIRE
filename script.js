@@ -1,4 +1,5 @@
-// script.js - generated from TypeScript-like source
+// script.js - Fichier JavaScript contenant les données des travailleurs et les fonctions pour gérer la liste, les filtres et les détails.
+// Définition du tableau des travailleurs avec leurs informations.
 const workers = [
   {
     "id": 1,
@@ -650,7 +651,17 @@ const workers = [
   }
 ];
 
-
+/**
+ * Crée le HTML d'une carte de travailleur
+ * @param {Object} w - L'objet travailleur contenant les informations
+ * @param {number} w.id - L'identifiant unique du travailleur
+ * @param {string} w.name - Le nom du travailleur
+ * @param {string} w.phone - Le numéro de téléphone du travailleur
+ * @param {string} w.email - L'adresse email du travailleur
+ * @param {string} w.domain - Le domaine d'expertise du travailleur
+ * @param {string} w.locality - La localité du travailleur
+ * @param {string} w.description - La description du travailleur
+ */
 function createCardHTML(w) {
   return `
   <div class="col-md-6 col-lg-4">
@@ -669,6 +680,7 @@ function createCardHTML(w) {
   </div>`;
 }
 
+
 function renderList(filtered) {
   const container = document.getElementById("cardsContainer");
   container.innerHTML = filtered.map(createCardHTML).join("");
@@ -681,6 +693,17 @@ function renderList(filtered) {
   });
 }
 
+/**
+ * Affiche les détails d'un travailleur dans une modale Bootstrap
+ * @param {Object} w - L'objet travailleur dont les détails doivent être affichés
+ * @param {number} w.id - L'identifiant unique du travailleur
+ * @param {string} w.name - Le nom du travailleur
+ * @param {string} w.phone - Le numéro de téléphone du travailleur
+ * @param {string} w.email - L'adresse email du travailleur
+ * @param {string} w.domain - Le domaine d'expertise du travailleur
+ * @param {string} w.locality - La localité du travailleur
+ * @param {string} w.description - La description du travailleur
+ */
 function showDetail(w) {
   const modalTitle = document.getElementById("modalTitle");
   const modalBody = document.getElementById("modalBody");
@@ -697,6 +720,11 @@ function showDetail(w) {
   bsModal.show();
 }
 
+/**
+ * Applique les filtres sélectionnés pour afficher la liste des travailleurs filtrés
+ * Cette fonction récupère les valeurs des filtres (domaine, localité, recherche) et filtre le tableau des travailleurs,
+ * puis appelle renderList pour mettre à jour l'affichage.
+ */
 function applyFilters() {
   const domainActiveBtn = document.querySelector(".domain-btn.btn-primary");
   const domainActive = domainActiveBtn ? domainActiveBtn.getAttribute("data-domain") : "Tous";
@@ -714,8 +742,13 @@ function applyFilters() {
   renderList(result);
 }
 
+/**
+ * Initialisation de l'application au chargement du DOM
+ * Cette fonction configure les événements pour le menu mobile, les boutons de domaine, les filtres de localité et de recherche,
+ * puis affiche la liste initiale des travailleurs.
+ */
 window.addEventListener("DOMContentLoaded", () => {
-  // Navbar toggle for mobile
+  // Basculement du menu mobile
   const menuToggle = document.getElementById("menu-toggle");
   const navbar = document.getElementById("navbar");
   if (menuToggle && navbar) {

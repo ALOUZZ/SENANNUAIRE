@@ -1,35 +1,55 @@
+<!-- Déclaration du type de document HTML5 -->
 <!doctype html>
+<!-- Élément racine HTML avec langue française -->
 <html lang="fr">
 <head>
+  <!-- Encodage des caractères en UTF-8 -->
   <meta charset="utf-8" />
+  <!-- Configuration de la vue pour les appareils mobiles -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Titre de la page affiché dans l'onglet du navigateur -->
   <title>SEN ANNUAIRE</title>
+  <!-- Lien vers le CSS de Bootstrap pour les composants UI -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Lien vers la feuille de style personnalisée pour la page services -->
   <link rel="stylesheet" href="Zservice.css">
 </head>
 <body>
+ <!-- En-tête fixe avec logo et navigation -->
  <header id="main-header">
         <div class="container">
-            <div id="logo">SEN<span>ANNUAIRE</span></div>
-            <button id="menu-toggle">&#9776;</button> <nav id="navbar">
+            <!-- Logo de l'application -->
+            <a href="index.html#home " style="text-decoration: none;" ><div id="logo">SEN<span> ANNUAIRE</span></div></a>
+            <!-- Bouton pour basculer le menu mobile -->
+            <button id="menu-toggle">&#9776;</button>
+            <!-- Navigation principale -->
+            <nav id="navbar">
                 <ul>
+                    <!-- Lien vers la section accueil de index.html -->
                     <li><a href="index.html#home "   class="nav-link active">ACCUEIL </a></li>
+                    <!-- Lien vers la page services actuelle -->
                     <li><a href="service.html" class="nav-link">SERVICES</a></li>
+                    <!-- Lien vers la section à propos de index.html -->
                     <li><a href="index.html#about     " class="nav-link">PROPOS</a></li>
+                    <!-- Lien vers la section contact de index.html -->
                     <li><a href="index.html#contact   "  class="nav-link">CONTACT</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
+    <!-- Conteneur principal pour le contenu de la page -->
     <div class="container">
         <div class="row">
-        <!-- Left filters -->
+        <!-- Section des filtres à gauche -->
         <aside class="col-lg-3 mb-4 ">
+            <!-- Carte contenant les filtres -->
             <div class="card p-3 filtre     ">
             <h5>Filtres</h5>
+            <!-- Filtre par localité -->
             <div class="mb-3">
                 <label class="form-label">Localité</label>
+                <!-- Sélecteur pour choisir la localité -->
                 <select id="localiteSelect" class="form-select">
                 <option value="Toutes">Toutes</option>
                 <option value="Centre Ville">Centre Ville</option>
@@ -38,10 +58,14 @@
                 </select>
             </div>
 
+            <!-- Filtre par domaine -->
             <div class="mb-3 filtre      ">
                 <label class="form-label">Domaine</label>
+                <!-- Conteneur pour les boutons de domaine -->
                 <div id="domainButtons" class="d-grid gap-2">
+                <!-- Bouton pour afficher tous les domaines -->
                 <button class="btn btn-primary domain-btn" data-domain="Tous">Tous</button>
+                <!-- Boutons pour chaque domaine spécifique -->
                 <button class="btn btn-outline-primary domain-btn" data-domain="Électricien">Électricien</button>
                 <button class="btn btn-outline-primary domain-btn" data-domain="Plomberie">Plomberie</button>
                 <button class="btn btn-outline-primary domain-btn" data-domain="Maçonnerie">Maçonnerie</button>
@@ -52,35 +76,41 @@
                 </div>
             </div>
 
+            <!-- Champ de recherche -->
             <div>
                 <label class="form-label">Rechercher</label>
+                <!-- Input pour rechercher par nom, téléphone ou email -->
                 <input id="searchInput" class="form-control" placeholder="Nom, téléphone, email..." />
             </div>
             </div>
         </aside>
 
-        <!-- Right results -->
+        <!-- Section des résultats à droite -->
         <main class="col-lg-9">
+            <!-- Conteneur pour afficher les cartes des travailleurs -->
             <div id="cardsContainer" class="row g-3">
-            <!-- Cards rendered by JS/TS -->
+            <!-- Les cartes sont générées dynamiquement par JavaScript/TypeScript -->
             </div>
         </main>
         </div>
     </div>
-  </div>
 
-  <!-- Modal for details -->
+  <!-- Modale Bootstrap pour afficher les détails d'un travailleur -->
   <div class="modal fade" id="detailModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
       <div class="modal-content">
+        <!-- En-tête de la modale avec titre -->
         <div class="modal-header">
           <h5 id="modalTitle" class="modal-title"></h5>
+          <!-- Bouton pour fermer la modale -->
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fermer"></button>
         </div>
+        <!-- Corps de la modale avec description et liste d'informations -->
         <div class="modal-body">
           <p id="modalBody"></p>
           <ul id="modalList" class="list-unstyled"></ul>
         </div>
+        <!-- Pied de la modale avec bouton fermer -->
         <div class="modal-footer">
           <button class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
         </div>
@@ -88,7 +118,9 @@
     </div>
   </div>
 
+  <!-- Script JavaScript pour la logique des filtres et affichage -->
   <script src="script.js"></script>
+  <!-- Script Bootstrap pour les composants JavaScript -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

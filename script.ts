@@ -1,15 +1,17 @@
-// script.ts - TypeScript source (données + logique)
-interface Worker {
-  id: number;
-  name: string;
-  phone: string;
-  email: string;
-  domain: string;
-  locality: string;
-  description?: string;
+// script.ts - Fichier TypeScript contenant les données des travailleurs et les fonctions pour gérer la liste, les filtres et les détails.
+
+// Définition de l'interface WorkerData qui représente un travailleur avec ses informations
+interface WorkerData {
+  id: number; // Identifiant unique du travailleur
+  name: string; // Nom du travailleur
+  phone: string; // Numéro de téléphone du travailleur
+  email: string; // Adresse email du travailleur
+  domain: string; // Domaine d'expertise du travailleur
+  locality: string; // Localité du travailleur
+  description?: string; // Description optionnelle du travailleur
 }
 
-const workers: Worker[] = [
+const workers: WorkerData[] = [
   {
     "id": 1,
     "name": "Fatou Diallo",
@@ -17,7 +19,7 @@ const workers: Worker[] = [
     "email": "fatou.diallo1@example.com",
     "domain": "Électricien",
     "locality": "Centre Ville",
-    "description": "Expert en Électricien — basé à Centre Ville"
+    "description": "Expert en Électricité — basé à Centre Ville"
   },
   {
     "id": 2,
@@ -26,7 +28,7 @@ const workers: Worker[] = [
     "email": "adama.diop2@example.com",
     "domain": "Électricien",
     "locality": "Centre Ville",
-    "description": "Expert en Électricien — basé à Centre Ville"
+    "description": "Expert en Électricité — basé à Centre Ville"
   },
   {
     "id": 3,
@@ -660,7 +662,15 @@ const workers: Worker[] = [
   }
 ];
 
-function createCardHTML(w: Worker): string {
+/**
+ * Crée le code HTML pour une carte de travailleur.
+ * Cette fonction génère une chaîne HTML représentant une carte Bootstrap pour un travailleur donné,
+ * incluant son nom, domaine, localité, description, et boutons pour appeler ou voir les détails.
+ * @param w - L'objet WorkerData contenant les informations du travailleur
+ * @returns La chaîne HTML de la carte du travailleur
+ */
+// FONCTION CREATION DE CARD
+function createCardHTML(w: WorkerData): string {
   return `
   <div class="col-md-6 col-lg-4">
     <div class="card p-3 card-worker">
@@ -678,7 +688,13 @@ function createCardHTML(w: Worker): string {
   </div>`;
 }
 
-function renderList(filtered: Worker[]) {
+/**
+ * Affiche la liste des travailleurs filtrés dans le conteneur HTML.
+ * Cette fonction met à jour le contenu du conteneur avec les cartes HTML générées pour chaque travailleur filtré,
+ * et attache des écouteurs d'événements aux boutons "Voir" pour afficher les détails du travailleur.
+ * @param filtered - Le tableau des travailleurs filtrés à afficher
+ */
+function renderList(filtered: WorkerData[]) {
   const container = document.getElementById("cardsContainer")!;
   container.innerHTML = filtered.map(createCardHTML).join("");
   document.querySelectorAll(".btn-detail").forEach(btn => {
@@ -690,7 +706,13 @@ function renderList(filtered: Worker[]) {
   });
 }
 
-function showDetail(w: Worker) {
+/**
+ * Affiche les détails d'un travailleur dans une modale Bootstrap.
+ * Cette fonction met à jour le titre, le corps et la liste des informations de la modale avec les données du travailleur,
+ * puis affiche la modale.
+ * @param w - L'objet WorkerData contenant les informations du travailleur à afficher
+ */
+function showDetail(w: WorkerData) {
   const modalTitle = document.getElementById("modalTitle")!;
   const modalBody = document.getElementById("modalBody")!;
   const modalList = document.getElementById("modalList")!;
@@ -706,6 +728,11 @@ function showDetail(w: Worker) {
   bsModal.show();
 }
 
+/**
+ * Applique les filtres sélectionnés par l'utilisateur et met à jour la liste des travailleurs affichés.
+ * Cette fonction récupère les valeurs des filtres (domaine, localité, recherche), filtre le tableau des travailleurs,
+ * puis appelle renderList pour afficher les résultats filtrés.
+ */
 function applyFilters() {
   const domainActive = (document.querySelector(".domain-btn.btn-primary") as HTMLElement | null)?.getAttribute("data-domain") || "Tous";
   const locality = (document.getElementById("localiteSelect") as HTMLSelectElement).value;
@@ -722,6 +749,11 @@ function applyFilters() {
   renderList(result);
 }
 
+/**
+ * Initialise les écouteurs d'événements et affiche la liste initiale des travailleurs une fois le DOM chargé.
+ * Cette section attache des gestionnaires d'événements aux boutons de domaine, au sélecteur de localité et au champ de recherche,
+ * et appelle renderList pour afficher tous les travailleurs au démarrage.
+ */
 window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".domain-btn").forEach(btn => {
     btn.addEventListener("click", (ev) => {
