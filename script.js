@@ -662,6 +662,7 @@ const workers = [
  * @param {string} w.locality - La localité du travailleur
  * @param {string} w.description - La description du travailleur
  */
+//fontion createur rapide  de card issue des informations des travaillleur
 function createCardHTML(w) {
   return `
   <div class="col-md-6 col-lg-4">
@@ -680,7 +681,7 @@ function createCardHTML(w) {
   </div>`;
 }
 
-
+// FILTRAGE DES TRAVAILLEUR SELON LES BOUTON APPUYE
 function renderList(filtered) {
   const container = document.getElementById("cardsContainer");
   container.innerHTML = filtered.map(createCardHTML).join("");
@@ -692,18 +693,7 @@ function renderList(filtered) {
     });
   });
 }
-
-/**
- * Affiche les détails d'un travailleur dans une modale Bootstrap
- * @param {Object} w - L'objet travailleur dont les détails doivent être affichés
- * @param {number} w.id - L'identifiant unique du travailleur
- * @param {string} w.name - Le nom du travailleur
- * @param {string} w.phone - Le numéro de téléphone du travailleur
- * @param {string} w.email - L'adresse email du travailleur
- * @param {string} w.domain - Le domaine d'expertise du travailleur
- * @param {string} w.locality - La localité du travailleur
- * @param {string} w.description - La description du travailleur
- */
+// detail info travaileur dans un ppopop
 function showDetail(w) {
   const modalTitle = document.getElementById("modalTitle");
   const modalBody = document.getElementById("modalBody");
